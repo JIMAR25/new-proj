@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const nodemailer = require('nodemailer');
 
@@ -11,18 +12,19 @@ app.post('/donation', (req, res) => {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'cotedorhotel@gmail.com',
-            pass: 'qtywxqfrbgpxjtjm'
+            user: process.env.EMAIL_ADDRESS,
+            pass: process.env.EMAIL_PASSWORD
         }
     });
 
     // Créer le contenu de l'e-mail
     const mailOptions = {
-        from: 'cotedorhotel@gmail.com',
+        from: process.env.EMAIL_ADDRESS,
         to: donorEmail,
         subject: 'Confirmation de don',
         text: `Cher ${donorName},\n\nMerci pour votre don de ${donationAmount} EUR. Nous apprécions votre soutien.\n\nCordialement,\nVotre organisation`
     };
+    
 
     // Envoyer l'e-mail
     transporter.sendMail(mailOptions, (error, info) => {
