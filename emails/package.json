@@ -1,0 +1,16 @@
+{
+  "name": "microservice-email",
+  "version": "1.0.0",
+  "description": "Microservice pour envoyer des e-mails de confirmation de donation",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Donation",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "body-parser": "^1.19.0",
+    "nodemailer": "^6.6.3"
+  }
+}
