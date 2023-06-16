@@ -1,10 +1,58 @@
 @extends('layouts.admin')
 
 @section('content')
+<div class="mt-4" style="text-align: right;">
+    <form action="{{ route('logout') }}" method="POST">
+        @csrf
+        <x-primary-button type="submit" class="btn btn-danger">
+            {{ __('Déconnexion') }}
+        </x-primary-button>
+    </form>
+</div>
+
+    
+
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-10">
                 <div class="card-header">Tableau de bord Admin</div>
+                <h1>Liste des clients</h1>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Nom</th>
+                                <th>Email</th>
+                                <th>Téléphone</th>
+                                <th>Adresse</th>
+                                <th>Code postal</th>
+                                <th>Ville</th>
+                                <th>Date de naissance</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($clients as $client)
+                            <tr>
+                                <td>{{ $client->nom }}</td>
+                                <td>{{ $client->email }}</td>
+                                <td>{{ $client->tel }}</td>
+                                <td>{{ $client->adresse }}</td>
+                                <td>{{ $client->code_postal }}</td>
+                                <td>{{ $client->ville }}</td>
+                                <td>{{ $client->date_de_naissance }}</td>
+                                <td>
+                                    <form action="{{ route('admin.clients.destroy', $client->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-sm btn-danger">Supprimer</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+
                 <h1>Evenements</h1>
 
                 <a href="{{ route('admin.evenements.create') }}" class="btn btn-primary">Create New Evenement</a>
@@ -34,7 +82,7 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <a href="{{ route('admin.evenements.create') }}" class="btn btn-sm btn-primary">Create </a>
+                                        
                                         <a href="{{ route('admin.evenements.edit', $evenement->id) }}" class="btn btn-sm btn-primary">Edit</a>
                                         <form action="{{ route('admin.evenements.destroy', $evenement->id) }}" method="POST" style="display: inline-block;">
                                             @csrf
