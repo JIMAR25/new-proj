@@ -42,7 +42,7 @@ class AuthenticatedSessionController extends Controller
     
         if ($user->isAdmin()) {
             $request->session()->put('admin', true);
-            return redirect()->route('dashboard');
+            return redirect()->route('admin.index');
         }
         
         return redirect()->intended(RouteServiceProvider::HOME);

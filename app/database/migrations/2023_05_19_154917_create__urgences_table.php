@@ -12,7 +12,7 @@ class CreateUrgencesTable extends Migration
             $table->string('titre');
             $table->text('description');
             $table->decimal('montant_demande', 8, 2);
-            $table->decimal('montant_actuel', 8, 2);
+            $table->decimal('montant_actuel', 8, 2)->default(0);
             $table->date('date_limite');
             $table->timestamps();
         });

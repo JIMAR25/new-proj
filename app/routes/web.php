@@ -9,6 +9,7 @@ use App\Http\Controllers\DonationController;
 use App\Http\Controllers\ArgentController;
 use App\Http\Controllers\EvenementController;
 use App\Http\Controllers\UrgenceController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientController;
 
@@ -158,7 +159,25 @@ Route::get('evenements/share/{id}', [EvenementController::class, 'share'])->name
 
 
 
-Route::middleware(['auth','admin'])->group(function () {
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+
+    Route::get('admin/donations', [AdminController::class, 'indexDonations'])->name('admin.donations.index');
+
+    Route::get('/admin/evenements', [AdminController::class, 'indexEvenements'])->name('admin.evenements.index');
+    Route::get('admin/evenements/create', [AdminController::class, 'createEvenement'])->name('admin.evenements.create');
+    Route::post('admin/evenements', [AdminController::class, 'storeEvenement'])->name('admin.evenements.store');
+    Route::get('admin/evenements/{id}/edit', [AdminController::class, 'editEvenement'])->name('admin.evenements.edit');
+    Route::put('admin/evenements/{id}', [AdminController::class, 'updateEvenement'])->name('admin.evenements.update');
+    Route::delete('admin/evenements/{id}', [AdminController::class, 'destroyEvenement'])->name('admin.evenements.destroy');
+
+
+    Route::get('/admin/urgences', [AdminController::class, 'indexUrgences'])->name('admin.urgences.index');
+    Route::get('/admin/urgences/create', [AdminController::class, 'createUrgences'])->name('admin.urgences.create');
+    Route::post('/admin/urgences', [AdminController::class, 'storeUrgences'])->name('admin.urgences.store');
+    Route::get('/admin/urgences/{urgence}/edit', [AdminController::class, 'editUrgences'])->name('admin.urgences.edit');
+    Route::put('/admin/urgences/{urgence}', [AdminController::class, 'updateUrgences'])->name('admin.urgences.update');
+    Route::delete('/admin/urgences/{urgence}', [AdminController::class, 'destroyUrgences'])->name('admin.urgences.destroy');
 });
 
 Route::middleware(['auth','client'])->group(function () {
