@@ -55,8 +55,9 @@ class DonationController extends Controller
             $donation->prix_livraison = ($request->input('livraison') === 'express') ? 10 : 5;
         }
 
+        $donation->user()->associate(auth()->user());
         $donation->save();
-        // Store the Donation object in the session
+                // Store the Donation object in the session
         $request->session()->put('donation', $donation);
 
         // Send the data to the email sending microservice
@@ -104,8 +105,9 @@ class DonationController extends Controller
                 $donation->prix_livraison = 5;
             }
 
+            $donation->user()->associate(auth()->user());
             $donation->save();
-
+            
             // Redirect the user to the payment page
             return redirect()->route('paiement.create');
         } else {
@@ -127,8 +129,9 @@ class DonationController extends Controller
             $donation->transaction_id = $transactionId;
             $donation->charge_id = $chargeId;
 
+            $donation->user()->associate(auth()->user());
             $donation->save();
-
+            
             // Redirect the user to the success page or another appropriate page
             return redirect()->route('donations.index')->with('success', 'Donation effectuée avec succès.');
         } else {

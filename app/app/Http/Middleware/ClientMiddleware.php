@@ -1,5 +1,5 @@
 <?php
-// Middleware pour le client
+
 namespace App\Http\Middleware;
 
 use Closure;
@@ -12,8 +12,7 @@ class ClientMiddleware
         if ($request->user() && $request->user()->isClient()) {
             return $next($request);
         }
-    
-        return redirect('/')->with('error', 'Unauthorized access');
-    }
 
+        return redirect()->route('clients.index')->with('error', 'Unauthorized access');
+    }
 }

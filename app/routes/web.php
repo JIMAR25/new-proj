@@ -10,6 +10,9 @@ use App\Http\Controllers\ArgentController;
 use App\Http\Controllers\EvenementController;
 use App\Http\Controllers\UrgenceController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ClientController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -30,11 +33,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+
 
 Route::get('/contact', [ContactController::class, 'create'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
@@ -163,6 +162,10 @@ Route::middleware(['auth','admin'])->group(function () {
 });
 
 Route::middleware(['auth','client'])->group(function () {
+    Route::get('/clients/index', [ClientController::class, 'index'])->name('clients.index');
+    Route::get('/clients/edit', [ClientController::class, 'edit'])->name('clients.edit');
+    Route::put('/clients', [ClientController::class, 'update'])->name('clients.update');
+    Route::delete('/clients', [ClientController::class, 'destroy'])->name('clients.destroy');
 });
 
 

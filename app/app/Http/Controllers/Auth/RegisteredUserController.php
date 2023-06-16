@@ -23,29 +23,38 @@ class RegisteredUserController extends Controller
         return view('auth.register');
     }
 
-    /**
-     * Handle an incoming registration request.
-     *
-     * @throws \Illuminate\Validation\ValidationException
-     */
-    public function store(Request $request): RedirectResponse
-    {
-        $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        ]);
+   /**
+ * Handle an incoming registration request.
+ *
+ * @throws \Illuminate\Validation\ValidationException
+ */
+public function store(Request $request): RedirectResponse
+{
+    $request->validate([
+        'nom' => ['required', 'string', 'max:255'],
+        'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+        'password' => ['required', 'confirmed', Rules\Password::defaults()],
+        'tel' => ['nullable', 'string', 'max:255'],
+        'adresse' => ['nullable', 'string', 'max:255'],
+        'code_postal' => ['nullable', 'string', 'max:255'],
+        'ville' => ['nullable', 'string', 'max:255'],
+        'date_de_naissance' => ['nullable', 'date'],
+    ]);
 
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
+    $user = User::create([
+        'nom' => $request->nom,
+        'email' => $request->email,
+        'password' => Hash::make($request->password),
+        'tel' => $request->tel,
+        'adresse' => $request->adresse,
+        'code_postal' => $request->code_postal,
+        'ville' => $request->ville,
+        'date_de_naissance' => $request->date_de_naissance,
+    ]);
 
-        event(new Registered($user));
+    event(new Registered($user));
 
-        Auth::login($user);
+    return redirect()->route('login')->with('success', 'Votre compte a été créé avec succès. Veuillez vous connecter.');
+}
 
-        return redirect(RouteServiceProvider::HOME);
-    }
 }

@@ -23,8 +23,10 @@ class CreateDonationsTable extends Migration
             $table->string('telephone')->nullable();
             $table->string('code_postal')->nullable();
             $table->string('ville')->nullable();
-    $table->date('date_livraison')->nullable();
-   
+            $table->date('date_livraison')->nullable();
+            $table->unsignedBigInteger('user_id')->nullable(); // Ajouter la colonne user_id
+
+            $table->foreign('user_id')->references('id')->on('users')->nullable(); // Ajouter la clé étrangère vers la table users
             $table->timestamps();
         });
     }

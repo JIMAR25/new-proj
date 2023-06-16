@@ -25,4 +25,9 @@ class Donation extends Model
     'prix_livraison'
 ];
 
+public function user()
+{
+    return $this->belongsTo(User::class);
+}
+
 }
