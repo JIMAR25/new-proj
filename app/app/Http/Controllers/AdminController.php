@@ -17,10 +17,20 @@ class AdminController extends Controller
     //All
     public function index()
     {
+        $clients = User::all();
         $donations = Donation::all();
         $evenements = Evenement::all();
         $urgences = Urgence::all();
-        return view('admin.index',compact('evenements','donations','urgences'));
+        return view('admin.index',compact('evenements','donations','urgences','clients'));
+    }
+
+    //Clients
+    public function destroyClient($id)
+    {
+        $client = User::findOrFail($id);
+        $client->delete();
+
+        return redirect()->route('admin.clients.index')->with('success', 'Client supprimé avec succès.');
     }
     //Donation
     public function indexDonations()
@@ -172,5 +182,5 @@ public function destroyEvenement($id)
 
         return redirect()->route('admin.index')->with('success', 'Urgence supprimée avec succès.');
     }
-
+    
 }
