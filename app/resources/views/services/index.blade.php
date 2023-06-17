@@ -68,7 +68,8 @@
                     @if($provider->image)
                         <img class="card-img-top" src="{{ asset('images/' . $provider->image) }}" alt="{{ $provider->nom }}">
                     @endif
-                    <h4> je suis {{$service->nom }} - {{ $provider->nom }} - {{ $provider->age }} ans - disponible à {{ $provider->available_time }} - mon email {{$provider->email}} - Telephone: {{$provider->telephone}}</h4>
+                    <h4> {{$service->nom }} </h4>
+                    <p>je suis  {{ $provider->nom }} - {{ $provider->age }} ans - disponible à {{ $provider->available_time }} <br> mon email {{$provider->email}} - Telephone: {{$provider->telephone}}</p>
                 </ul>
                 @endforeach
             </td>
@@ -197,29 +198,40 @@ form button {
 .card {
   display: flex;
   flex-direction: column;
-  background-color: white;
+   background-color: #f1f1f1;
   padding: 10px;
+  border: solid 1px red;
+  text-align:center;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Ombre pour chaque carte */
 }
 
 .card img {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 10px;
+  width:400px;
+  height: 300px;
+  margin-left:25px;
+  margin-bottom: 30px;
+
 }
 
 .card h4 {
   margin: 0;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 19px;
+  margin-left:25px;
+  color:gray;
   line-height: 1.2;
+   margin-bottom: 15px;
 }
 
 .card p {
   margin: 5px 0 0;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.2;
+  margin-bottom: 20px;
+  margin-left:20px;
+  margin-right:20px;
+  line-height:25px;
 }
 
 

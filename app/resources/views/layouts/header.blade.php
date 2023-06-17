@@ -62,7 +62,18 @@
             <a class="nav-link" href="/">Accueil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/services">Services</a>
+            <a class="nav-link" id="donations-link" href="{{route('donations.index')}}">Donations</a>
+            <ul id="donations-menu" class="submenu">
+              <li class="nav-item">
+                <a class="nav-link" href="/urgences">Cas d'urgences</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/services">{{__("Services")}}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('temoignages.index')}}">{{__("Témoignages")}}</a>
+              </li>
+            </ul>
           </li>
           <li class="nav-item">
               <a class="nav-link" href="{{route('evenements.index')}}">Evenements</a>
@@ -71,21 +82,10 @@
             <a class="nav-link" href="{{route('about')}}">{{__("À propos de nous")}}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="donations-link" href="#">Donations</a>
-            <ul id="donations-menu" class="submenu">
-              <li class="nav-item">
-                <a class="nav-link" href="/urgences">Cas d'urgences</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{route('temoignages.index')}}">{{__("Témoignages")}}</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{route('evenements.index')}}">Événements</a>
-              </li>
-            </ul>
+            <a class="nav-link" href="{{route('contact')}}">{{__("Contact")}}</a>
           </li>
-        </ul>
 
+        </ul>
         <div class="row2">
           <select name="langue" id="langue">
             <option value="fr">Fr</option>
@@ -99,9 +99,6 @@
 </nav>
 
 <ul class="navbar-nav fixed-bottom">
-  <li class="nav-item">
-    <a class="nav-link" href="{{route('contact')}}">{{__("Contact")}}</a>
-  </li>
   <li class="nav-item">
     <a class="nav-link" href="/login">{{__("login")}}</a>
   </li>

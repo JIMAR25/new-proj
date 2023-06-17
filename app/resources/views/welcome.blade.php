@@ -18,13 +18,6 @@
         <div class="titles">
 
       </div>
-      <div class="sidebar">
-        <ul>
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">Twitter</a></li>
-        </ul>
-      </div>
   </div>
   <section class="home-section">
   <div class="container">
@@ -226,37 +219,6 @@
   padding: 0;
 }
 
-.sidebar {
-  position: fixed;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  width: 80px;
-  background-color: white;
-  color: black;
-  text-align: center;
-}
-
-.sidebar ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.sidebar li {
-  margin: 10px 0;
-}
-
-.sidebar a {
-  color: black;
-  text-decoration: none;
-  display: block;
-  padding: 5px;
-}
-
-.sidebar a:hover {
-  color: black;
-}
 footer {
   background-color:#696969;
   padding: 50px;
