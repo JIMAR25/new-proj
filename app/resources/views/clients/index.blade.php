@@ -1,5 +1,6 @@
+@include('layouts.header')
 @extends('layouts.app')
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
 
 @section('content')
     <div class="mt-4">
@@ -87,4 +88,7 @@
         
         
     </div>
+<div class="footer">
+  @include('layouts.footer')
+</div>
 @endsection

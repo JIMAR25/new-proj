@@ -1,4 +1,4 @@
-<x-guest-layout>
+@include('layouts.header')
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
@@ -84,4 +84,104 @@
             </x-primary-button>
         </div>
     </form>
-</x-guest-layout>
+<div class="footer">
+  @include('layouts.footer')
+</div>
+
+<style>
+    .flex a{
+        margin-left:280px;
+        font-size:18px;
+        color:gray;
+        margin-top:-30px;
+    }
+
+
+form {
+  position:relative;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  max-width: 700px;
+  margin: 0 auto;
+  border-radius:5%;
+}
+
+form div {
+  margin-bottom: 10px;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  width:300px;
+  color:gray;
+}
+#date_de_naissance,
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+form input[type="submit"] {
+  display: inline-block;
+  background-color: #337ab7;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+  background-color: #23527c;
+}
+form input:invalid {
+  border-color: red;
+}
+
+form .text-red-500 {
+  color: red;
+}
+
+form .bg-red-100 {
+  background-color: rgba(255, 0, 0, 0.2);
+}
+
+form button[type="submit"] {
+  margin-top: -30px;
+  padding: 0.5rem 1.5rem;
+  margin-right:100px;
+  font-size:18px;
+  background-color:red;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+form button[type="submit"]:hover {
+  background-color:gray;
+}
+.mt-4{
+    margin-top:30px;
+}
+.flex {
+  margin-top:80px;
+}
+
+</style>

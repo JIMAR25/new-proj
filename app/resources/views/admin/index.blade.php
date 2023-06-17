@@ -1,5 +1,4 @@
 @extends('layouts.admin')
-
 @section('content')
 <div class="mt-4" style="text-align: right;">
     <form action="{{ route('logout') }}" method="POST">
