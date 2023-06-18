@@ -1,10 +1,10 @@
 @extends('layouts.app')
-
+@include('layouts.header')
 @section('content')
-<div class="row">
+<div class="r">
 <div class="col-md-8 col-md-offset-2">
 <div class="panel panel-default">
-<div class="panel-heading">{{ __('Faire un don d\'argent') }}</div>
+<h1 id="h1">Faire un don d'argent</h1>
             <div class="panel-body">
                 @if(Session::has('success'))
                 <script>
@@ -46,7 +46,7 @@
                 @endif
                     @csrf
 
-                    <div class="form-group row">
+                    <div class="form-group r">
                         <label for="montant" class="col-md-4 col-form-label text-md-right">{{ __('Montant du don') }}</label>
     
                         <div class="col-md-6">
@@ -54,7 +54,7 @@
                         </div>
                     </div>
     
-                    <div class="form-group row">
+                    <div class="form-group r">
                         <label for="nom" class="col-md-4 col-form-label text-md-right">{{ __('Nom complet') }}</label>
     
                         <div class="col-md-6">
@@ -62,7 +62,7 @@
                         </div>
                     </div>
     
-                    <div class="form-group row">
+                    <div class="form-group r">
                         <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Adresse email') }}</label>
     
                         <div class="col-md-6">
@@ -70,7 +70,7 @@
                         </div>
                     </div>
     
-                    <div class="form-group row">
+                    <div class="form-group r">
                         <label for="adresse" class="col-md-4 col-form-label text-md-right">{{ __('Adresse') }}</label>
     
                         <div class="col-md-6">
@@ -78,7 +78,7 @@
                         </div>
                     </div>
     
-                    <div class="form-group row">
+                    <div class="form-group r">
                         <label for="code_postal" class="col-md-4 col-form-label text-md-right">{{ __('Code postal') }}</label>
     
                         <div class="col-md-6">
@@ -86,14 +86,14 @@
                         </div>
                     </div>
     
-                    <div class="form-group row">
+                    <div class="form-group r">
                         <label for="ville" class="col-md-4 col-form-label text-md-right">{{ __('Ville') }}</label>
     
                         <div class="col-md-6">
                             <input id="ville" type="text" class="form-control" name="ville" required>
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="form-group r">
                         <label for="telephone" class="col-md-4 col-form-label text-md-right">Téléphone:</label>
                         <div class="col-md-6">
                         <input type="tel" class="form-control" id="telephone" name="telephone" required>
@@ -132,5 +132,87 @@
         </div>
     </div>
 </div>
+    
+    <div class="footer">
+        @include('layouts.footer')
+    </div>
 @endsection
 
+<style>
+#h1{
+    text-align:center;
+    color:gray;
+    margin-bottom:50px;
+     margin-top:50px;
+}
+/* Style pour le formulaire de réservation */
+form{
+    border: 1px solid #ccc; /* Ajouter une bordure de 1 pixel de largeur, solide et grise */
+  padding: 20px; /* Ajouter un espace de remplissage de 20 pixels à l'intérieur de la bordure */
+
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      margin-right: 350px;
+    margin-left: 350px;
+}
+
+
+  
+  .form-group {
+    flex-basis: calc(25% - 20px);
+    margin-right: 20px;
+    margin-bottom: 20px;
+ 
+  }
+  
+  .form-group:last-child {
+    margin-right: 0;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 18px;
+    color:red;
+      margin-left: 15px;
+  }
+  #type,
+  input[type="date"],
+  input[type="number"],
+  input[type="email"],
+  input[type="text"],
+  input[type="password"],
+  input[type="tel"],
+  #methode {
+    width: 100%;
+    padding: 10px;
+    margin-top:10px;
+     margin-bottom:10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+ 
+
+  
+
+  
+   .butt{
+    margin-right: 20px;
+   }
+   .btn {
+    background-color:gray; /* couleur de fond */
+    color: white; /* couleur du texte */
+    border: none; /* bordure du bouton */
+    border-radius: 5px; /* coins arrondis */
+    padding: 10 20px; /* espacement interne */
+    margin-top: 95px;
+    margin-bottom: 20px;
+    margin-left: 300px;
+    font-size: 16px; /* taille du texte */
+    cursor: pointer; /* curseur de souris */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+
+
+
+</style>
