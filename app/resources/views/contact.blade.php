@@ -1,25 +1,55 @@
 @include('layouts.header')
 <div class="row mt-5">
     <div class="col-md-12">
+      @if(Session::has('success'))
+      <script>
+          Swal.fire({
+              icon: 'success',
+              title: 'Succès!',
+              text: '{{ Session::get('success') }}',
+              showConfirmButton: false,
+              timer: 3000
+          });
+      </script>
+  @endif
+  
+  @if ($errors->any())
+      <script>
+          var errorMessages = '';
+          @foreach ($errors->all() as $error)
+              errorMessages += '{{ $error }}\n';
+          @endforeach
+  
+          Swal.fire({
+              icon: 'error',
+              title: 'Erreur!',
+              text: errorMessages,
+              showConfirmButton: false,
+              timer: 5000
+          });
+      </script>
+  @endif
         <div class="sup">
         <h1>Contactez-nous</h1>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis veritatis assumenda repellendus ex modi, alias, aspernatur provident, perferendis ratione officiis autem eaque ipsum facere inventore facilis voluptates odit cupiditate illum?</p>
         </div>
-      <form>
-        <div class="form-group">
-          <label for="name">Nom complet</label>
-          <input type="text" class="form-control" id="name" required>
-        </div>
-        <div class="form-group">
-          <label for="email">Adresse e-mail</label>
-          <input type="email" class="form-control" id="email" required>
-        </div>
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea class="form-control" id="message" rows="5" required></textarea>
-        </div>
-        <button type="submit"  class="env">Envoyer</button>
-      </form>
+        <form method="POST" action="{{ route('contact.store') }}">
+          @csrf
+          <div class="form-group">
+            <label for="name">Nom complet</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Adresse e-mail</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="env">Envoyer</button>
+        </form>
+        
     </div>
   </div>
   <div class="footer">

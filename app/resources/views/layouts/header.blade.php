@@ -48,7 +48,8 @@
 </div>
 </div>
 </nav> --}}
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.min.js"></script>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
     <div class="logo">

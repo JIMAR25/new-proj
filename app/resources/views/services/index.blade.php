@@ -13,7 +13,34 @@
         <a href="{{ route('services.create') }}" class="btn btn-primary">Ajouter un Service</a>
         </div> 
     </div>
+    @if(Session::has('success'))
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Succès!',
+            text: '{{ Session::get('success') }}',
+            showConfirmButton: false,
+            timer: 3000
+        });
+    </script>
+@endif
 
+@if ($errors->any())
+    <script>
+        var errorMessages = '';
+        @foreach ($errors->all() as $error)
+            errorMessages += '{{ $error }}\n';
+        @endforeach
+
+        Swal.fire({
+            icon: 'error',
+            title: 'Erreur!',
+            text: errorMessages,
+            showConfirmButton: false,
+            timer: 5000
+        });
+    </script>
+@endif
     </div>
     <form action="{{ route('services.index') }}" method="GET">
         <div class="mb-3">

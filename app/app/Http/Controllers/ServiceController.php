@@ -60,7 +60,8 @@ class ServiceController extends Controller
     $provider->service_id = $service->id;
     $provider->save();
 
-    return redirect()->route('services.index');
+    return redirect()->route('services.index')->with('success', 'Service ajouté avec succès.');
+
 }
 
 
