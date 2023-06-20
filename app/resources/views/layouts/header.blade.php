@@ -86,13 +86,7 @@
           </li>
 
         </ul>
-        <div class="row2">
-          <select name="langue" id="langue">
-            <option value="fr">Fr</option>
-            <option value="en">Ang</option>
-            <option value="ar">Ar</option>
-          </select>
-        </div>
+
       </div>
     </div>
   </div>

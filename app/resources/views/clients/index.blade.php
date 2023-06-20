@@ -78,11 +78,11 @@
                 </thead>
                 <tbody>
                     @foreach ($donations as $donation)
-                        <tr>
-                            <td>{{ $donation->user->nom }}</td>
-                            <td>{{ $donation->montant }}</td>
-                            <td>{{ $donation->type }}</td>
-                            <td>{{ $donation->methode }}</td>
+                        <tr id="tr">
+                            <td id="td">{{ $donation->user->nom }}</td>
+                            <td id="td">{{ $donation->montant }}</td>
+                            <td id="td">{{ $donation->type }}</td>
+                            <td id="td">{{ $donation->methode }}</td>
                         </tr>
                     @endforeach
                 </tbody>
@@ -203,29 +203,32 @@
         padding-left:20px;
         background-color:#f0f0f0;
     }
-
-    .donation-table tbody tr td {
-        font-size: 18px;
-        color: gray;
-    }
-
     .donation-table td:first-child {
         font-weight: bold;
     }
-        .donation-table thead {
+    .donation-table thead {
         background-color:white;
         font-weight: bold;
         color:gray;
         height:50px;
         font-size:18px;
-    }
 
-    .donation-table tbody tr td {
+    }
+      
+
+    .donation-table tbody #tr #td {
         font-size: 18px;
         color: gray;
+        padding-left:100px;
+        margin-top: -80px; 
     }
-
-    .donation-table td:first-child {
+    .donation-table tbody #tr  {
+        margin-left:100px;
+        margin-top:-100px;
+    }
+    .donation-table #td:first-child {
         font-weight: bold;
     }
+
+
 </style>

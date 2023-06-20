@@ -38,21 +38,21 @@
     <div class="carte-roule">
     <div class="card">
         <img src="./pics/back11.jpg" alt="image1">
-        <h3>Titre 1</h3>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis eius quia ad corrupti vitae vel architecto distinctio, quam suscipit voluptatibus molestias. Aut sint veniam dignissimos itaque voluptates voluptas eaque delectus.</p>
-        <h5>date</h5>
+        <h3>Donnez de l'espoir à ces enfants en difficulté</h3>
+        <p>Votre soutien peut faire une réelle différence dans la vie de ces enfants. Faites un don aujourd'hui et contribuez à leur offrir un avenir meilleur. Grâce à votre générosité, nous pouvons leur fournir un accès à l'éducation, aux soins de santé et à des conditions de vie améliorées.</p>
+        <h5>20-02-2018</h5>
     </div>
     <div class="card">
         <img src="./pics/back12.jpg" alt="image2">
-        <h3>Titre 2</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta vero accusantium earum distinctio cupiditate qui officiis blanditiis, quidem, voluptate nulla corrupti molestiae asperiores repellat natus! Officia hic eligendi iste ipsa?</p>
-        <h5>date</h5>
+        <h3>Chaque don compte pour ces petits visages</h3>
+        <p>Chaque enfant mérite une enfance heureuse et pleine d'opportunités. Votre don peut contribuer à fournir de la nourriture, des vêtements, des abris et une éducation à ces enfants défavorisés. Chaque euro compte et nous vous invitons à vous joindre à notre cause pour leur offrir une chance de réussir dans la vie.</p>
+        <h5>30-01-2023</h5>
     </div>
     <div class="card">
         <img src="./pics/back13.jpg" alt="image3">
-        <h3>Titre 3</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus commodi asperiores quasi, quo nulla blanditiis! Aperiam esse obcaecati aspernatur voluptate nulla sint sit et quam, deleniti veniam tempore repudiandae porro!</p>
-        <h5>date</h5>
+        <h3>Ensemble, créons un avenir meilleur pour ces enfants</h3>
+        <p> Nous croyons en un avenir où tous les enfants ont la possibilité de réaliser leur plein potentiel. Votre don peut aider à briser le cycle de la pauvreté et à offrir à ces enfants des opportunités qu'ils méritent. Ensemble, nous pouvons leur offrir un soutien et une protection, et les aider à bâtir un avenir prometteur.</p>
+        <h5>02-06-2021</h5>
     </div>
     </div>
 </section>
@@ -282,7 +282,7 @@ margin-left:50px;
 } 
 .carte-roule .card h3{
     color:red;
-    margin-left:120px;
+
 }
 
     </style>

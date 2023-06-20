@@ -71,29 +71,29 @@
 <section class="card-section">
   <div class="card">
     <img src="./pics/back5.jpg" alt="image1">
-    <h3>Titre 1</h3>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis eius quia ad corrupti vitae vel architecto distinctio, quam suscipit voluptatibus molestias. Aut sint veniam dignissimos itaque voluptates voluptas eaque delectus.</p>
-    <h5>date</h5>
+    <h3>Donnez de l'espoir à ces enfants en difficulté</h3>
+    <p>Votre soutien peut faire une réelle différence dans la vie de ces enfants. Faites un don aujourd'hui et contribuez à leur offrir un avenir meilleur. Grâce à votre générosité, nous pouvons leur fournir un accès à l'éducation, aux soins de santé et à des conditions de vie améliorées.</p>
+    <h5>12/03/2020 - Bni Ahmed</h5>
   </div>
   <div class="card">
     <img src="./pics/back6.jpg" alt="image2">
-    <h3>Titre 2</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta vero accusantium earum distinctio cupiditate qui officiis blanditiis, quidem, voluptate nulla corrupti molestiae asperiores repellat natus! Officia hic eligendi iste ipsa?</p>
-    <h5>date</h5>
+    <h3>Chaque don compte pour ces petits visages</h3>
+    <p>Chaque enfant mérite une enfance heureuse et pleine d'opportunités. Votre don peut contribuer à fournir de la nourriture, des vêtements, des abris et une éducation à ces enfants défavorisés. Chaque euro compte et nous vous invitons à vous joindre à notre cause pour leur offrir une chance de réussir dans la vie.</p>
+    <h5>01/04/2022 - Dar Chawi</h5>
   </div>
   <div class="card">
     <img src="./pics/back7.jpg" alt="image3">
-    <h3>Titre 3</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus commodi asperiores quasi, quo nulla blanditiis! Aperiam esse obcaecati aspernatur voluptate nulla sint sit et quam, deleniti veniam tempore repudiandae porro!</p>
-    <h5>date</h5>
+    <h3>Ensemble, créons un avenir meilleur pour ces enfants</h3>
+    <p>Nous croyons en un avenir où tous les enfants ont la possibilité de réaliser leur plein potentiel. Votre don peut aider à briser le cycle de la pauvreté et à offrir à ces enfants des opportunités qu'ils méritent. Ensemble, nous pouvons leur offrir un soutien et une protection, et les aider à bâtir un avenir prometteur.</p>
+    <h5>30/07/2019 - Seddina</h5>
   </div>
 </section>
 
 <section class="custom-section">
   <div class="contai">
-    <h2 class="custom-title">Titre de la section</h2>
-    <p class="custom-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo turpis quis orci tristique, ac suscipit libero sagittis. In vel bibendum nisl. Praesent id tincidunt lectus. Etiam sollicitudin libero nec neque imperdiet malesuada.</p>
-    <button class="custom-button">Mon bouton</button>
+    <h2 class="custom-title">L'impact de votre don</h2>
+    <p class="custom-paragraph">Votre don a le pouvoir de changer des vies. En offrant votre soutien, vous pouvez aider à fournir de l'espoir, des soins et des opportunités aux personnes dans le besoin. Chaque euro compte et contribue à faire une réelle différence. Ensemble, créons un impact positif dans notre société.</p>
+    <button class="custom-button">Faire un don</button>
   </div>
 </section>
 
@@ -119,15 +119,15 @@
               </div>
                 <div class="pource">
                   <span>50%</span>
-                  <p>Votre nombre ici</p>
+                  <p> Générosité</p>
                 </div>
                 <div class="pource">
                   <span>75%</span>
-                  <p>Votre nombre ici</p>
+                  <p> Solidarité</p>
                 </div>
                 <div class="pource">
                   <span>100%</span>
-                  <p>Votre nombre ici</p>
+                  <p>Impact</p>
                 </div>
             </div>
             <hr>

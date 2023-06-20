@@ -58,7 +58,7 @@ class DatabaseSeeder extends Seeder
         Temoignage::create([
             'nom' => 'John Doe',
             'message' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla fringilla semper enim, vel malesuada lectus pulvinar vitae.',
-            'image' => 'john_doe.jpg'
+            'image' => 'educateur.webp'
         ]);
         $urgences = [
             [
