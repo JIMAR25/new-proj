@@ -12,7 +12,45 @@
                     </x-primary-button>
                 </form>
             </div>
+            @if ($errors->any())
+            <div class="bg-red-200 text-red-800 p-4 mb-4 rounded-md">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 
+        @if(Session::has('success'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Succès!',
+                text: '{{ Session::get('success') }}',
+                showConfirmButton: false,
+                timer: 3000
+            });
+        </script>
+    @endif
+    
+    @if ($errors->any())
+        <script>
+            var errorMessages = '';
+            @foreach ($errors->all() as $error)
+                errorMessages += '{{ $error }}\n';
+            @endforeach
+    
+            Swal.fire({
+                icon: 'error',
+                title: 'Erreur!',
+                text: errorMessages,
+                showConfirmButton: false,
+                timer: 5000
+            });
+        </script>
+    @endif
+    
             <h2>Mon Profil</h2>
             <table class="info-table">
                 <tbody>

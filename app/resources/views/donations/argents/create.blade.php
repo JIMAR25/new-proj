@@ -6,6 +6,34 @@
 <div class="panel panel-default">
 <h1 id="h1">Faire un don d'argent</h1>
             <div class="panel-body">
+                @if(Session::has('success'))
+                <script>
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Succès!',
+                        text: '{{ Session::get('success') }}',
+                        showConfirmButton: false,
+                        timer: 3000
+                    });
+                </script>
+            @endif
+            
+            @if ($errors->any())
+                <script>
+                    var errorMessages = '';
+                    @foreach ($errors->all() as $error)
+                        errorMessages += '{{ $error }}\n';
+                    @endforeach
+            
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Erreur!',
+                        text: errorMessages,
+                        showConfirmButton: false,
+                        timer: 5000
+                    });
+                </script>
+            @endif
                 <form method="POST" action="{{ route('paiement.storeDon') }}">
                     @if ($errors->any())
                     <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">

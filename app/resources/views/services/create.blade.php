@@ -3,6 +3,34 @@
 @section('content')
 <div class="container">
     <h1 id="h1">Ajouter un Service</h1>
+    @if(Session::has('success'))
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Succès!',
+            text: '{{ Session::get('success') }}',
+            showConfirmButton: false,
+            timer: 3000
+        });
+    </script>
+@endif
+
+@if ($errors->any())
+    <script>
+        var errorMessages = '';
+        @foreach ($errors->all() as $error)
+            errorMessages += '{{ $error }}\n';
+        @endforeach
+
+        Swal.fire({
+            icon: 'error',
+            title: 'Erreur!',
+            text: errorMessages,
+            showConfirmButton: false,
+            timer: 5000
+        });
+    </script>
+@endif
     <form action="{{ route('services.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">

@@ -162,7 +162,7 @@ Route::get('evenements/share/{id}', [EvenementController::class, 'share'])->name
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 
-    Route::get('/admin/clients', [AdminController::class, 'indexClients'])->name('admin.clients.index');
+    Route::get('/admin/clients', [AdminController::class, 'index'])->name('admin.clients.index');
     Route::delete('/admin/clients/{id}', [AdminController::class, 'destroyClient'])->name('admin.clients.destroy');
 
     Route::get('admin/donations', [AdminController::class, 'indexDonations'])->name('admin.donations.index');

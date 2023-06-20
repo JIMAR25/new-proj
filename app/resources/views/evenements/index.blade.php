@@ -11,16 +11,44 @@
 </head>
 @section('content')
     <div class="con">
+        @if(Session::has('success'))
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Succès!',
+            text: '{{ Session::get('success') }}',
+            showConfirmButton: false,
+            timer: 3000
+        });
+    </script>
+@endif
+
+@if ($errors->any())
+    <script>
+        var errorMessages = '';
+        @foreach ($errors->all() as $error)
+            errorMessages += '{{ $error }}\n';
+        @endforeach
+
+        Swal.fire({
+            icon: 'error',
+            title: 'Erreur!',
+            text: errorMessages,
+            showConfirmButton: false,
+            timer: 5000
+        });
+    </script>
+@endif
         <a href="{{ route('evenements.create') }}" class="event">Ajouter Un evenement</a>
         <div class="ok">
             <div class="ok2">
                 <div class="card">
                     <div class="card-body">
-                        @if (session('success'))
+                        {{-- @if (session('success'))
                             <div class="alert alert-success" role="alert">
                                 {{ session('success') }}
                             </div>
-                        @endif
+                        @endif --}}
 
                         @foreach ($evenements as $evenement)
                             <div class="card mb-3">

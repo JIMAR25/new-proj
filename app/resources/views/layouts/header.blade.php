@@ -48,7 +48,8 @@
 </div>
 </div>
 </nav> --}}
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.min.js"></script>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
     <div class="logo">
@@ -94,7 +95,15 @@
 
 <ul class="navbar-nav fixed-bottom">
   <li class="nav-item">
-    <a class="nav-link" href="/login">{{__("login")}}</a>
+    @guest
+      <a class="nav-link" href="/login">{{__("login")}}</a>
+    @else
+      @if(auth()->user()->isAdmin())
+        <a class="nav-link" href="/admin">{{__("Admin")}}</a>
+      @else
+        <a class="nav-link" href="/clients/index">{{__("Espace client")}}</a>
+      @endif
+    @endguest
   </li>
 </ul>
 
