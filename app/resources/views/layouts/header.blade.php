@@ -101,7 +101,15 @@
 
 <ul class="navbar-nav fixed-bottom">
   <li class="nav-item">
-    <a class="nav-link" href="/login">{{__("login")}}</a>
+    @guest
+      <a class="nav-link" href="/login">{{__("login")}}</a>
+    @else
+      @if(auth()->user()->isAdmin())
+        <a class="nav-link" href="/admin">{{__("Admin")}}</a>
+      @else
+        <a class="nav-link" href="/clients/index">{{__("Espace client")}}</a>
+      @endif
+    @endguest
   </li>
 </ul>
 
