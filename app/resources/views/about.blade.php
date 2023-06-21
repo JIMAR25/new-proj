@@ -67,7 +67,6 @@
     <style>
         .about1 {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   margin: 20px;
   margin-top:50px;
