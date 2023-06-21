@@ -72,6 +72,7 @@
   margin: 20px;
   margin-top:50px;
   margin-bottom:100px;
+   flex-wrap: nowrap; 
 }
 
 .b1,.b2 {
@@ -104,7 +105,7 @@ p {
 
 .b1 img {
   width:650px;
-  height:auto;
+  height:800px;
   
 }
 .b2{
@@ -284,80 +285,111 @@ margin-left:50px;
     color:red;
 
 }
-/* media queries  */
 
-@media (max-width:1200px){
 
-   section{
-      padding:3rem 5%;
-   }
-
+/* Utilisez des unités de mesure flexibles */
+.b1 img {
+  max-width: 100%;
+  height: auto;
 }
 
-@media (max-width:991px){
-
-   html{
-      font-size: 55%;
-   }
-
-   section{
-      padding:3rem 2rem;
-   }
-
-   .home .slide .content h3{
-      font-size: 10vw;
-   }
-
+/* Utilisez des techniques de mise en page responsives */
+.about1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+   flex-wrap: nowrap; 
 }
 
-@media (max-width:768px){
-
-   .heading h1{
-      font-size: 4rem;
-   }
-
-   #menu-btn{
-      display: inline-block;
-      transition: .2s linear;
-   }
-
-   #menu-btn.fa-times{
-      transform: rotate(180deg);
-   }
-
-   .header .navbar{
-      position: absolute;
-      top:99%; left:0; right:0;
-      background-color: var(--white);
-      border-top: var(--border);
-      padding:2rem;
-      transition: .2s linear;
-      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-   }
-
-   .header .navbar.active{
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-   }
-
-   .header .navbar a{
-      display: block;
-      margin:2rem;
-      text-align: center;
-   }
-   
-
+.b1,
+.b2 {
+  flex-basis: 100%;
+  margin-bottom: 20px;
 }
 
-@media (max-width:450px){
+.liste {
+  float: none;
+  width: 100%;
+  padding: 20px;
+  margin: 20px auto;
+  text-align: center;
+}
 
-   html{
-      font-size: 50%;
-   }
+.image {
+  float: none;
+  width: 100%;
+  height: auto;
+  margin: 20px auto;
+}
 
-   .heading-title{
-      font-size: 3.5rem;
-   }
+.footer {
+  text-align: center;
+}
 
+.card-section {
+  text-align: center;
+}
+
+.carte-roule {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.carte-roule .card {
+  flex-basis: 30%;
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+/* Utilisez des médias queries pour des styles spécifiques à différentes tailles d'écran */
+@media screen and (min-width: 768px) {
+          .about1 {
+  display: flex;
+
+}
+  .b1 {
+    flex-basis: 50%;
+  }
+  .b2 {
+    flex-basis: 50%;
+  }
+  .liste {
+    width: 40%;
+  }
+  .image {
+    width: 50%;
+    margin-left: 50px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+          .about1 {
+  display: flex;
+
+}
+  .b1 {
+    flex-basis: 30%;
+  }
+  .b2 {
+    flex-basis: 70%;
+  }
+  .liste {
+    width: 30%;
+  }
+  .image {
+    width: 70%;
+    margin-left: 150px;
+  }
+  .carte-roule .card {
+    flex-basis: 20%;
+    max-width: 300px;
+  }
 }
 
 
